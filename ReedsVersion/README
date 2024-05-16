@@ -1,0 +1,14 @@
+8/14/2019
+
+These scripts were updated on 8/14/2019.
+
+Fixes:
+  - sped up "generate_decoys" scripts so they calculate Tanimoto between ligands versus decoys,
+    not all molecules vs all molecules - this was done by incorporating JK's scripts
+  - in the SMILES pipeline, the Tanimoto calculation between all ligands and the property-matched
+    decoys in all subdirectories is performed first, then protonation is done. This may speed up
+    the calculation, if the property-matched decoys returned are similar to ligands.
+  - The "filter_decoys" script only calculates Tanimoto between decoys now
+  - Protomer SMILES for decoys are reported when using the SMILES pipeline (generate_decoys_with_SMILES.py)
+  - Decoys are sorted by Tc to all ligands, and then assigned to each ligand now. Before, they were sorted by molecular weight
+
